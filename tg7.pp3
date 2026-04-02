@@ -245,9 +245,9 @@ Saturation=50
 Enabled=true
 Enhance=false
 Median=false
-Luma=12.41
+Luma=6
 Ldetail=50
-Chroma=7.5700000000000003
+Chroma=4
 Method=Lab
 LMethod=SLI
 CMethod=MAN
@@ -266,7 +266,7 @@ CCCurve=1;0.050000000000000003;0.5;0.34999999999999998;0.34999999999999998;0.349
 
 [EPD]
 Enabled=true
-Strength=0.42999999999999999
+Strength=0.30
 Gamma=1
 EdgeStopping=1.3999999999999999
 Scale=1
@@ -340,10 +340,10 @@ FocalLength=12
 Defish=false
 
 [LensProfile]
-LcMode=lfauto
+LcMode=none
 LCPFile=
-UseDistortion=true
-UseVignette=true
+UseDistortion=false
+UseVignette=false
 UseCA=true
 LFCameraMake=
 LFCameraModel=
