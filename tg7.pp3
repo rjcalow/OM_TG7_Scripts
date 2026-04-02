@@ -123,7 +123,7 @@ ClCurve=0;
 
 [Sharpening]
 Enabled=true
-Contrast=7
+Contrast=4
 Method=usm
 Radius=0.5
 BlurRadius=0.20000000000000001
@@ -165,8 +165,8 @@ Uniformity=5
 [White Balance]
 Enabled=true
 Setting=Camera
-Temperature=5844
-Green=0.95999999999999996
+Temperature=5450
+Green=0.95399999999999996
 Equal=1
 TemperatureBias=0
 StandardObserver=TWO_DEGREES
@@ -246,8 +246,8 @@ Enabled=true
 Enhance=false
 Median=false
 Luma=6
-Ldetail=50
-Chroma=4
+Ldetail=14.539999999999999
+Chroma=11.220000000000001
 Method=Lab
 LMethod=SLI
 CMethod=MAN
@@ -256,8 +256,8 @@ SMethod=shal
 MedMethod=soft
 RGBMethod=soft
 MethodMed=Lonly
-Redchro=3.5
-Bluechro=-1.8
+Redchro=6.0999999999999996
+Bluechro=-3.2999999999999998
 AutoGain=true
 Gamma=1.2
 Passes=1
@@ -266,7 +266,7 @@ CCCurve=1;0.050000000000000003;0.5;0.34999999999999998;0.34999999999999998;0.349
 
 [EPD]
 Enabled=true
-Strength=0.30
+Strength=0.29999999999999999
 Gamma=1
 EdgeStopping=1.3999999999999999
 Scale=1
@@ -314,8 +314,8 @@ Pivot=0
 Enabled=false
 X=0
 Y=0
-W=3008
-H=4006
+W=4006
+H=3008
 FixedRatio=true
 Ratio=As Image
 Orientation=As Image
@@ -327,7 +327,7 @@ HorizontalFlip=false
 VerticalFlip=false
 
 [Common Properties for Transformations]
-Method=log
+Method=lin
 Scale=1
 AutoFill=true
 
@@ -340,9 +340,9 @@ FocalLength=12
 Defish=false
 
 [LensProfile]
-LcMode=none
+LcMode=metadata
 LCPFile=
-UseDistortion=false
+UseDistortion=true
 UseVignette=false
 UseCA=true
 LFCameraMake=
@@ -431,10 +431,10 @@ BorderBlue=255
 
 [PostDemosaicSharpening]
 Enabled=true
-Contrast=0
+Contrast=20
 AutoContrast=true
 AutoRadius=true
-DeconvRadius=0.72999999999999998
+DeconvRadius=0.83999999999999997
 DeconvRadiusOffset=0
 DeconvIterCheck=true
 DeconvIterations=20
