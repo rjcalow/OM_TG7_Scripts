@@ -11,12 +11,12 @@ Auto=false
 Clip=0.02
 Compensation=0
 Brightness=0
-Contrast=0
-Saturation=0
-Black=0
+Contrast=10
+Saturation=5
+Black=1
 HighlightCompr=0
 HighlightComprThreshold=0
-ShadowCompr=50
+ShadowCompr=30
 HistogramMatching=false
 CurveFromHistogramMatching=false
 ClampOOG=true
@@ -26,8 +26,8 @@ Curve=0;
 Curve2=0;
 
 [HLRecovery]
-Enabled=true
-Method=Coloropp
+Enabled=false
+Method=Luminance
 Hlbl=0
 Hlth=1
 
@@ -127,7 +127,7 @@ Contrast=11
 Method=usm
 Radius=0.5
 BlurRadius=0.20000000000000001
-Amount=200
+Amount=130
 Threshold=20;80;2000;1200;
 OnlyEdges=false
 EdgedetectionRadius=1.8999999999999999
@@ -145,8 +145,8 @@ Pastels=0
 Saturated=0
 PSThreshold=0;75;
 ProtectSkins=false
-AvoidColorShift=true
-PastSatTog=true
+AvoidColorShift=false
+PastSatTog=false
 SkinTonesCurve=0;
 
 [SharpenEdge]
@@ -165,8 +165,8 @@ Uniformity=5
 [White Balance]
 Enabled=true
 Setting=Camera
-Temperature=5221
-Green=0.91600000000000004
+Temperature=5819
+Green=0.92600000000000005
 Equal=1
 TemperatureBias=0
 StandardObserver=TWO_DEGREES
@@ -225,11 +225,11 @@ Curve2=0;
 Curve3=0;
 
 [Impulse Denoising]
-Enabled=false
-Threshold=50
+Enabled=true
+Threshold=20
 
 [Defringing]
-Enabled=false
+Enabled=true
 Radius=2
 Threshold=13
 HueCurve=1;0.16666666699999999;0;0.34999999999999998;0.34999999999999998;0.34699999999999998;0;0.34999999999999998;0.34999999999999998;0.51366742600000004;0;0.34999999999999998;0.34999999999999998;0.66894457100000004;0;0.34999999999999998;0.34999999999999998;0.82877752459999998;0.97835991;0.34999999999999998;0.34999999999999998;0.99088838270000001;0;0.34999999999999998;0.34999999999999998;
@@ -247,7 +247,7 @@ Enhance=false
 Median=false
 Luma=0
 Ldetail=0
-Chroma=15
+Chroma=10.1
 Method=Lab
 LMethod=SLI
 CMethod=MAN
@@ -256,8 +256,8 @@ SMethod=shal
 MedMethod=soft
 RGBMethod=soft
 MethodMed=Lonly
-Redchro=0
-Bluechro=0
+Redchro=-0.40000000000000002
+Bluechro=10.199999999999999
 AutoGain=true
 Gamma=1.7
 Passes=1
@@ -314,7 +314,7 @@ Pivot=0
 Enabled=false
 X=0
 Y=0
-W=4006
+W=4004
 H=3008
 FixedRatio=true
 Ratio=As Image
@@ -329,7 +329,7 @@ VerticalFlip=false
 [Common Properties for Transformations]
 Method=log
 Scale=1
-AutoFill=false
+AutoFill=true
 
 [Rotation]
 Degree=0
@@ -340,13 +340,13 @@ FocalLength=12
 Defish=false
 
 [LensProfile]
-LcMode=metadata
+LcMode=lfmanual
 LCPFile=
 UseDistortion=true
 UseVignette=true
 UseCA=true
-LFCameraMake=
-LFCameraModel=
+LFCameraMake=Olympus Corporation
+LFCameraModel=TG-6
 LFLens=
 
 [Perspective]
@@ -431,10 +431,10 @@ BorderBlue=255
 
 [PostDemosaicSharpening]
 Enabled=true
-Contrast=0
+Contrast=8
 AutoContrast=true
 AutoRadius=true
-DeconvRadius=0.66000000000000003
+DeconvRadius=0.40999999999999998
 DeconvRadiusOffset=0
 DeconvIterCheck=true
 DeconvIterations=20
@@ -752,7 +752,7 @@ FlatFieldBlurRadius=32
 FlatFieldBlurType=Area Flatfield
 FlatFieldAutoClipControl=false
 FlatFieldClipControl=0
-CA=true
+CA=false
 CAAvoidColourshift=true
 CAAutoIterations=2
 CARed=0
@@ -780,7 +780,7 @@ DCBIterations=2
 DCBEnhance=true
 LMMSEIterations=2
 DualDemosaicAutoContrast=true
-DualDemosaicContrast=20
+DualDemosaicContrast=8
 PixelShiftMotionCorrectionMethod=1
 PixelShiftEperIso=0
 PixelShiftSigma=1
