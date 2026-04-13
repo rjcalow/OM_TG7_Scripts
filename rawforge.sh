@@ -1,6 +1,21 @@
 #!/bin/bash
 # Denoise ORF with RawForge, then develop with RawTherapee
 
+# ============================================================
+# RawForge processing pipeline:
+#
+#   ORF (camera RAW)
+#     │
+#     ├─► rawforge ──► DNG (ML-denoised, metadata stripped)
+#     │
+#     ├─► exiftool ──► DNG (+ original EXIF from ORF)
+#     │
+#     ├─► rawtherapee-cli + tg7-for-rawforge-dng-files.pp3
+#     │
+#     └─► enhanced JPEG (inherits EXIF from DNG)
+#
+# ============================================================
+
 source "/home/ricardo/Documents/python env/env/bin/activate"
 
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
@@ -25,6 +40,11 @@ for f in "$@"; do
 
   echo "→ RawForge denoising..."
   rawforge TreeNetDenoiseSuperLight "$f" "$dng" --cfa
+
+  if [ -f "$dng" ] && command -v exiftool &>/dev/null; then
+    echo "→ Copying EXIF to DNG..."
+    exiftool -overwrite_original -tagsFromFile "$f" -all:all "$dng" >/dev/null
+  fi
 
   echo "→ RawTherapee developing..."
   flatpak run --command=rawtherapee-cli com.rawtherapee.RawTherapee \
