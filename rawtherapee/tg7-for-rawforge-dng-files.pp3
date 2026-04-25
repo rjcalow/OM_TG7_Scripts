@@ -22,7 +22,7 @@ CurveFromHistogramMatching=true
 ClampOOG=true
 CurveMode=FilmLike
 CurveMode2=Standard
-Curve=0;
+Curve=4;0;0;0.050000000000000003;0;0.12;0.0098885754811197241;0.21799999999999997;0.1151313775394881;0.35519999999999996;0.36901427798210401;0.54727999999999999;0.67064861454121527;0.81619199999999992;0.93751747723524348;1;1;
 Curve2=0;
 
 [HLRecovery]
@@ -67,8 +67,8 @@ GainTransmissionCurve=1;0;0.10000000000000001;0.34999999999999998;0;0.25;0.25;0.
 
 [Local Contrast]
 Enabled=true
-Radius=42
-Amount=0.10000000000000001
+Radius=60
+Amount=0.20
 Darkness=1
 Lightness=1
 
@@ -122,8 +122,8 @@ LcCurve=0;
 ClCurve=0;
 
 [Sharpening]
-Enabled=false
-Contrast=20
+Enabled=true
+Contrast=6
 Method=usm
 Radius=0.5
 BlurRadius=0.20000000000000001
@@ -156,17 +156,17 @@ Strength=50
 ThreeChannels=false
 
 [SharpenMicro]
-Enabled=false
+Enabled=true
 Matrix=false
-Strength=20
-Contrast=20
+Strength=30
+Contrast=15
 Uniformity=5
 
 [White Balance]
 Enabled=true
 Setting=Camera
-Temperature=4824
-Green=0.95699999999999996
+Temperature=4792
+Green=0.94999999999999996
 Equal=1
 TemperatureBias=0
 StandardObserver=TWO_DEGREES
@@ -314,7 +314,7 @@ Pivot=0
 Enabled=false
 X=0
 Y=0
-W=4004
+W=4006
 H=3008
 FixedRatio=true
 Ratio=As Image
@@ -340,7 +340,7 @@ FocalLength=12
 Defish=false
 
 [LensProfile]
-LcMode=lfmanual
+LcMode=metadata
 LCPFile=
 UseDistortion=true
 UseVignette=false
@@ -431,10 +431,10 @@ BorderBlue=255
 
 [PostDemosaicSharpening]
 Enabled=true
-Contrast=37
+Contrast=0
 AutoContrast=true
 AutoRadius=true
-DeconvRadius=0.47999999999999998
+DeconvRadius=0.68000000000000005
 DeconvRadiusOffset=0
 DeconvIterCheck=true
 DeconvIterations=20
@@ -760,7 +760,7 @@ CABlue=0
 HotPixelFilter=false
 DeadPixelFilter=false
 HotDeadPixelThresh=100
-PreExposure=1
+PreExposure=1.1000000000000001
 
 [RAW Bayer]
 Method=amaze

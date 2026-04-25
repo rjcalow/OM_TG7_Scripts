@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Process ORF
-Exec=bash -c 'cd "$(dirname "%k")" && ./convert.sh %F; sleep 3'
-Type=Application
-Terminal=true
-Icon=camera-photo
-MimeType=image/x-olympus-orf;

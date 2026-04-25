@@ -1,16 +1,14 @@
 #!/bin/bash
-# Denoise ORF with RawForge, then develop with RawTherapee
+# Denoise ORF with RawForge to produce DNG
 
 # ============================================================
 # RawForge processing pipeline:
 #
 #   ORF (camera RAW)
 #     │
-#     ├─► rawforge ──► DNG (ML-denoised, metadata stripped)
+#     ├─► rawforge ──► DNG (ML-denoised + original EXIF)
 #     │
-#     ├─► exiftool ──► DNG (+ original EXIF from ORF)
-#     │
-#     ├─► rawtherapee-cli + tg7-for-rawforge-dng-files.pp3
+#     ├─► rawtherapee-cli + profile
 #     │
 #     └─► enhanced JPEG (inherits EXIF from DNG)
 #
@@ -30,8 +28,9 @@ for f in "$@"; do
   
   dir=$(dirname "$f")
   name=$(basename "$f" .ORF)
-  dng="$dir/${name}_rawforge.dng"
-  jpg="$dir/${name}_enhanced_with_rawforge.jpg"
+  outdir="$dir/converted"
+  mkdir -p "$outdir"
+  dng="$outdir/${name}_rawforge.dng"
 
   echo ""
   echo "===================================================="
@@ -45,13 +44,6 @@ for f in "$@"; do
     echo "→ Copying EXIF to DNG..."
     exiftool -overwrite_original -tagsFromFile "$f" -all:all "$dng" >/dev/null
   fi
-
-  echo "→ RawTherapee developing..."
-  flatpak run --command=rawtherapee-cli com.rawtherapee.RawTherapee \
-    -o "$jpg" \
-    -p "$SCRIPT_DIR/tg7-for-rawforge-dng-files.pp3" \
-    -j100 \
-    -c "$dng"
 
   file_end=$(date +%s)
   file_elapsed=$((file_end - file_start))
