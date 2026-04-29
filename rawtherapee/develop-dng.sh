@@ -21,7 +21,7 @@ shift $((OPTIND - 1))
 if [ "$PROFILE" = "superia" ]; then
   PP3_FILE="$SCRIPT_DIR/superia.pp3"
 elif [ "$PROFILE" = "rawforge" ]; then
-  PP3_FILE="$SCRIPT_DIR/tg7-for-rawforge-dng-files.pp3"
+  PP3_FILE="$SCRIPT_DIR/tg7-rawforge.pp3"
 else
   echo "Unknown profile: $PROFILE"
   echo "Available: rawforge, superia"
